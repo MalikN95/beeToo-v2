@@ -1,7 +1,10 @@
 {{> navbar}}
 {{> add-task}}
 {{> added-notion}}
+
+
 <div class="container">
+    {{#if tasks}}
     <div class="sort">
         <p class="sort-title">Сортировать по:</p>
         <div class="sort-category">
@@ -60,6 +63,9 @@
     <ul class="pagination">
         <div class="pages"></div>
     </ul>
+    {{else}}
+    <p>Задач нет</p>
+    {{/if}}
 </div>
 
 <input class="pagination-lenght" type="hidden" value="{{paginationLenth}}">
