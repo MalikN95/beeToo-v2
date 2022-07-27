@@ -1,0 +1,31 @@
+<nav>
+    <div class="nav-wrapper purple darken-3">
+        <a href="/" class="brand-logo">ToDo</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+            {{#if isHome}}
+            <li class="active">
+                <a href="/">Главная</a>
+            </li>
+             <li>
+                <a class="add-task-form" href="">Добавить задачу</a>
+            </li>
+            {{else}}
+            <li>
+                <a href="/">Главная</a>
+            </li>
+
+            {{/if}}
+            {{#if isAuth}}
+                <li>
+                    <a href="/auth/logout">Выход</a>
+                </li>
+            {{else}}
+
+                <li>
+                    <a href="/auth">Вход</a>
+                </li>
+            {{/if}}
+
+        </ul>
+    </div>
+</nav>

@@ -1,0 +1,31 @@
+{{> navbar}}
+
+<div class="auth">
+    <div class="container">
+        <div class="row">
+            <div id="test1" class="col s12 white">
+                <h3>Вход</h3>
+                {{#if error}}
+                <p class="error-auth">{{error}}</p>
+                {{/if}}
+                <div class="row">
+                    <form action="/auth/login" method="post" class="auth-form col s6 offset-s3">
+                        <div class="row">
+                            <div class="input-field col s12">
+                            <input name="login" id="last_name" type="text" class="validate" autocomplete="off" required>
+                            <label for="last_name">Введите Логин</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                            <input name="password" id="password" type="password" class="validate" required>
+                            <label for="password">Пароль</label>
+                            </div>
+                        </div>
+                        <button class="btn waves-effect waves-light" type="submit" >Вход</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+  </div>
+</div>

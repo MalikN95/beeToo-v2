@@ -1,0 +1,65 @@
+{{> navbar}}
+{{> add-task}}
+{{> added-notion}}
+<div class="container">
+    <div class="sort">
+        <p class="sort-title">Сортировать по:</p>
+        <div class="sort-category">
+            <a href="/userName">Имени</a>
+            <a href="/userEmail">Email</a>
+            <a href="/completed">Статус</a>
+        </div>
+    </div>
+    <div class="task-list">
+        {{#each tasks}}
+            {{#if completed}}
+                <div class='task-item green accent-3'>
+                    <div class='task-item__content'>
+                        {{#if changed}}
+                            <span class="task-changed">Изменено админом <img src="/img/edit.png" alt="" srcset=""></span>
+                        {{/if}}
+                        <h3 class='task__user-name'>{{userName}}</h3>
+                        <p class='task__user-mail'>{{userEmail}}</p>
+                        <p class='task-text'>{{text}}</p>
+                    {{#if  @root.isAuth}}
+                        <div class="task-actions">
+                            <div class="task-action__completed">
+                                <input class="task-completed-btn" type="checkbox" checked value="{{_id}}">
+                                <p>Завершено</p>
+                            </div>
+                            <img class="task-edit-btn"  data-delElem="{{_id}}" src="/img/edit.png" alt="">
+                        </div>
+                    {{/if}}
+                    </div>
+                    <p class='task-list__status'>Завершено</p>
+                </div>
+            {{else}}
+                <div class='task-item deep-orange accent-3'>
+                    <div class='task-item__content'>
+                        {{#if changed}}
+                            <span class="task-changed">Изменено админом <img src="/img/edit.png" alt="" srcset=""></span>
+                        {{/if}}
+                        <h3 class='task__user-name'>{{userName}}</h3>
+                        <p class='task__user-mail'>{{userEmail}}</p>
+                        <p class='task-text'>{{text}}</p>
+                    {{#if  @root.isAuth}}
+                        <div class="task-actions">
+                            <div class="task-action__completed">
+                                <input class="task-completed-btn" type="checkbox" value="{{_id}}">
+                                <p>Завершить</p>
+                            </div>
+                            <img class="task-edit-btn" data-delElem="{{_id}}" src="/img/edit.png" alt="">
+                        </div>
+                    {{/if}}
+                    </div>
+                    <p class='task-list__status'>В процессе</p>
+                </div>
+            {{/if}}
+        {{/each}}
+    </div>
+    <ul class="pagination">
+        <div class="pages"></div>
+    </ul>
+</div>
+
+<input class="pagination-lenght" type="hidden" value="{{paginationLenth}}">

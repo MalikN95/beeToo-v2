@@ -1,0 +1,26 @@
+<div class="add-task">
+    <img class="form-close task-form" src="/img/exit.svg" alt="">
+    <div class="row">
+        <form action="/task" method="post" class="col s12">
+            <div class="row">
+                <div class="input-field col s6">
+                    <input class="add-task-name" name="userName" id="input_text" type="text" data-length="10" autocomplete="off" required>
+                    <label for="input_text">Имя пользователя</label>
+                </div>
+                <div class="input-field col s6">
+                    <input name="userEmail" id="email" type="email" class="validate add-task-email" autocomplete="off" required>
+                    <label for="email">Email</label>
+                    <span class="helper-text" data-error="Некорректный Email" data-success="Верно">Введите ваш Email</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <textarea name="text" id="textarea2" class="materialize-textarea add-task-text" data-length="120" required></textarea>
+                    <label for="textarea2">Текст</label>
+                </div>
+            </div>
+            <input name="taskId" type="hidden" value="" class="task-id">
+            <button class="btn waves-effect waves-light form-btn" type="submit">Добавить задачу</button>
+        </form>
+    </div>
+</div>
