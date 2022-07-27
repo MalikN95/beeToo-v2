@@ -24,11 +24,11 @@ module.exports.login = async function(req, res) {
                 })
             } else{
                 req.flash('errorLogin', 'Не корректный пароль')
-                res.redirect('/auth')
+                res.redirect('/auth/auth')
             }
         } else {
             req.flash('errorLogin', 'Не корректный логин')
-            res.redirect('/auth')
+            res.redirect('/auth/auth')
         }
     } catch(e){
         console.log(e);

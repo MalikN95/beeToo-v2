@@ -25,7 +25,7 @@ app.use(express.static('assets'))
 
 //routes var
 const homeRoutes = require('./routes/home.router')
-const authRoutes = require('./routes/auth.routeR')
+const authRoutes = require('./routes/auth.router')
 const taskRoutes = require('./routes/task.router')
 
 //Routes
